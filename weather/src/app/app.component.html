@@ -1,0 +1,99 @@
+<!--
+<div class="search">
+  <form #form="ngForm" (submit)="seachCity()">
+    <input type="seach" placeholder="city" name="city" class="form-control" [(ngModel)]="cityName"> 
+  </form>
+</div><br>-->
+<div class="container" *ngIf="weatherZoneData">
+  <div class="upper-data">   
+    <div *ngIf="weatherZoneData.main.temp > 15"></div>
+    <div *ngIf="weatherZoneData.main.temp <= 15"></div>
+      <div class="weather-data">
+        <div class="location" style="color:black">{{ weatherZoneData.name }}</div>
+        <h1>Temperature Details</h1>
+        <div class="temperature">{{ weatherZoneData.main.temp | number: '1.0-0'}}&#8451;</div>
+      </div>
+  </div>
+    <div class="lower-data">
+      <span class="more-info-label">
+        More Information
+      </span>
+      <div class="more-info-container">
+          <div class="info-block">
+                  <span>min</span>
+                  <i class='fas fa-temperature-low'></i>
+              <div class="info-block-value">{{weatherZoneData.main.temp_min}}</div>
+          </div>
+
+          <div class="info-block">
+                <span>max</span>
+                <i class='fas fa-temperature-high'></i>
+            <div class="info-block-value">{{weatherZoneData.main.temp_max}}</div>
+        </div>
+
+        <div class="info-block">
+              <span>humidity</span>
+              <i class='far fa-sun'></i>
+          <div class="info-block-value">{{weatherZoneData.main.humidity}}</div>
+      </div>
+
+      <div class="info-block">
+            <span>wind</span>
+            <i class='fas fa-wind'></i>
+        <div class="info-block-value">{{weatherZoneData.wind.speed}}</div>
+    </div>
+      </div>
+    </div>
+</div>
+
+
+<!--commenting because values are static
+<div class="container">
+  <div class="upper-data">   
+    <img src="../assets/winter.jpg">
+      <div class="weather-data">
+        <div class="location" style="color:black">London</div>
+        <h1>Temperature Details</h1>
+        <div class="temperature">{{ 14.40 | number: '1.0-0'}}&#8451;</div>
+      </div>
+  </div>
+    <div class="lower-data">
+      <span class="more-info-label">
+        More Information
+      </span>
+      <div class="more-info-container">
+          <div class="info-block">
+              <div class="info-block-label">
+                  <span>min</span><br>
+                  <i class='fas fa-temperature-low'></i>
+              </div><br>
+              <div class="info-block-value">10</div>
+          </div>
+
+          <div class="info-block">
+            <div class="info-block-label">
+                <span>max</span><br>
+                <i class='fas fa-temperature-high'></i>
+            </div><br>
+            <div class="info-block-value">20</div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-block-label">
+              <span>humidity</span><br>
+              <i class='far fa-sun'></i>
+          </div><br>
+          <div class="info-block-value">77%</div>
+      </div>
+
+      <div class="info-block">
+        <div class="info-block-label">
+            <span>wind</span><br>
+            <i class='fas fa-wind'></i>
+        </div><br>
+        <div class="info-block-value">11km/hr</div>
+    </div>
+      </div>
+    </div>
+</div>
+-->
